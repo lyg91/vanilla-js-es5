@@ -25,5 +25,22 @@
 		</ul>
 		<div id="showResult"></div>	
 	</div>	
+
+	<script>
+		function showPrice() {
+		
+			var originPrice = document.querySelector("#oPrice").value;
+			var rate = document.querySelector("#rate").value;
+
+			if(originPrice != "" && rate != "") {
+				var savedPrice = originPrice * (rate/100);
+				var resultPrice = originPrice - savedPrice;
+				
+				// back tick을 활용한 template string 출력
+				document.querySelector("#showResult").innerHTML = `원 금액 ${originPrice}, 할인율 ${rate}%, 할인 받는 금액 ${savedPrice}, 결과금액 ${resultPrice}`
+
+			}
+		}
+	</script>
 </body>
 </html>
